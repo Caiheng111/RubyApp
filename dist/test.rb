@@ -77,8 +77,7 @@ def option
         log_in()
     elsif choose=="customer"
         prompt = TTY::Prompt.new
-        service_choice=prompt.select("Choose your destiny?", %w(Service_view drop_off_garments))
-            
+        service_choice=prompt.select("Choose your destiny?", %w(Service_view drop_off_garments))   
         if service_choice=="Service_view"
             return service_view()
         elsif service_choice=="drop_off_garments"
