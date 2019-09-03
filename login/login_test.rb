@@ -1,14 +1,4 @@
 
-require 'tty-font'
-require "tty-prompt"
-
-
-
-
-font = TTY::Font.new(:doom)
-puts font.write("welcome")
-puts font.write("                 HY ")
-puts font.write("dry clean")
 
 
 users=[
@@ -32,39 +22,17 @@ users=[
 
 
 
-    # def reset_password()
-    #     puts "Pleaase input your username again"
-    #     name=gets.strip()
-    #     time=0
-    #     while time < 3
-    #         puts "please enter your new password"
-    #         puts "> "
-    #         password_one=gets.strip()
-    #         puts "please enter your new password again"
-    #         puts "> "
-    #         password_two=gets.strip()
-    #         if password_one==password_two
-    #             users.each do |user|
-    #                 if user[:nmae]==name
-    #                 users[:password]=password_one
-    #                 puts "You already reseted your password," 
-    #                 break
-    #                 elsif
-    #                 password_one != password_two  
-    #            end  
-    #         end
-    #     time+=1
-    #     end
-    # end
-
+    
 
 prompt = TTY::Prompt.new
 puts "Welcome to the DRY CLEANING SERVICE,Please LOG IN NOW...."
+choose=prompt.select("Are you a user or a customer?", %w(user customer))
 
 name=prompt.select("Please choose the user name?", %w(Heng  Hannah Upa Hevvon))
 
 
-def Log_in(name,password,users)
+def log_in(name,password,users)
+    name=prompt.select("Please choose the user name?", %w(Heng  Hannah Upa Hevvon))
     puts "please input your password"
     password=gets.strip()
     counter=0
@@ -90,4 +58,30 @@ def Log_in(name,password,users)
 end
  
 Log_in("Heng","admin719",users)
+
+# def reset_password()
+    #     puts "Pleaase input your username again"
+    #     name=gets.strip()
+    #     time=0
+    #     while time < 3
+    #         puts "please enter your new password"
+    #         puts "> "
+    #         password_one=gets.strip()
+    #         puts "please enter your new password again"
+    #         puts "> "
+    #         password_two=gets.strip()
+    #         if password_one==password_two
+    #             users.each do |user|
+    #                 if user[:nmae]==name
+    #                 users[:password]=password_one
+    #                 puts "You already reseted your password," 
+    #                 break
+    #                 elsif
+    #                 password_one != password_two  
+    #            end  
+    #         end
+    #     time+=1
+    #     end
+    # end
+
 
