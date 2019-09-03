@@ -1,25 +1,24 @@
- 
-Item,Process,Price(GHS)
-Coat/Blazer,Press,10.00
-Shirt,Press,7.00
-Suit/2pc,Press,Only 15.00
-Trousers,Press,Only 8.00
-Blouse Press	Only 8.00
-Dress Press	Only 8.00
-Kaba,	2pc Press	Only 12.00
-Kaba,	3pc Press	Only 15.00
-Kaba,	Kente,	2pc Press	Only 12.00
-Kaba,	Kente,	3pc Press	Only 15.00
-Kaftan/Boubou,	1pc Press	Only 8.00
-Kaftan/Boubou,	2pc Press	Only 12.00
-Kaftan/Boubou,	3pc Press	Only 15.00
-Overcoat Press	Only 8.00
-Polo/Golf	Shirt Press	Only 5.00
-Robe,	Academic/Choir Press	Only 15.00
-Shorts Press	Only 6.00
-Smock,	1pc Press	Only 8.00
-Smock,	2pc Press	Only 12.00
-Smock,	3pc Press	Only 15.00
-Suit,	3pc Press	Only 15.00
-Suit,	Safari Press	Only 12.00
-T-Shirt Press	Only 5.00
+ITEM,PROCESS,PRICE(GHS)
+COAT/BLAZER,PRESS,$10.00
+SHIRT,PRESS,$7.00
+SUIT/2PC,PRESS,$15.00
+TROUSERS,PRESS,$8.00
+BLOUSE,PRESS,$8.00
+DRESS,PRESS,$8.00
+KABA2PC,PRESS,$12.00
+KABA3PC,PRESS,$15.00
+KABA/KENTE/2PC,PRESS,$12.00
+KABA/KENTE/3PC,PRESS,$15.00
+KAFTAN/BOUBOU/1PC,PRESS,$8.00
+KAFTAN/BOUBOU/2PC,PRESS,$12.00
+KAFTAN/BOUBOU/3PC,PRESS,$15.00
+OVERCOAT,PRESS,$8.00
+POLO/GOLF/SHIRT,PRESS,$5.00
+ROBE/ACADEMIC/CHOIR,PRESS,$15.00
+SHORTS,PRESS,$6.00
+SMOCK/1PC,PRESS,$8.00
+SMOCK/2PC,PRESS,$12.00
+SMOCK/3PC,PRESS,$15.00
+SUIT/3PC,PRESS,$15.00
+SUIT/SAFARI,PRESS,$12.00
+T-SHIRT,PRESS,$5.00

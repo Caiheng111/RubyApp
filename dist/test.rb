@@ -8,14 +8,14 @@ require 'csv'
 
 
 font = TTY::Font.new(:doom)
-puts font.write("welcome")
+puts font.write("WELCOME")
 puts font.write("                 H   Y ")
-puts font.write("dry clean")
+puts font.write("DRY   CLEANING")
 
 prompt = TTY::Prompt.new
 puts "Welcome to the DRY CLEANING SERVICE,Please LOG IN NOW....".colorize(:green)
 
-
+# METHOD LOGIN
 def log_in(name,password,users)
     name=prompt.select("Please choose the user name?", %w(Heng  Hannah Upa Hevvon))
     puts "please input your password"
@@ -44,19 +44,30 @@ end
 
 
 def service_view()
-
     prompt = TTY::Prompt.new
-    choices = %w(Laundry dry_clean Press_only)
-    prompt.multi_select("Select service?", choices)
- 
-  
-    csv=CSV.read("laundry_price.csv")
-    heading=csv.first
-    rows=csv[1..-1]
-    table = Terminal::Table.new :headings => heading, :rows => rows
-        puts table
-
+    choice=prompt.select("Choose your destiny?", %w(Laundry press_only dry_clean))
+    if choice=="Laundry"
+        csv=CSV.read("laundry_price.csv")
+        heading=csv.first
+        rows=csv[1..-1]
+        table1 = Terminal::Table.new :headings => heading, :rows => rows
+            puts table1
+    elsif choice=="press_only"
+        csv=CSV.read("press_only.csv")
+        heading=csv.first
+        rows=csv[1..-1]
+        table2 = Terminal::Table.new :headings => heading, :rows => rows
+            puts table2
+    else choice=="dry_clean"
+        csv=CSV.read("dry_cleaning.csv")
+        heading=csv.first
+        rows=csv[1..-1]
+        table3 = Terminal::Table.new :headings => heading, :rows => rows
+            puts table3
+    end   
 end
+
+
 
 
 def option
@@ -66,12 +77,11 @@ def option
         log_in()
     elsif choose=="customer"
         prompt = TTY::Prompt.new
-        service_view = %w(Service_view drop_off_garments)
-        prompt.multi_select("Select service", service_view)
+        service_choice=prompt.select("Choose your destiny?", %w(Service_view drop_off_garments))
             
-        if service_view=="Service_view"
+        if service_choice=="Service_view"
             return service_view()
-        elsif service_view=="drop_off_garments"
+        elsif service_choice=="drop_off_garments"
             # puts "drop_off_garments"
         end
     
