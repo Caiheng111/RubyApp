@@ -43,25 +43,6 @@ customers=[
 
 
 
-# def laundry_service()
-#     item_choose=[]
-#     loop do
-#         prompt = TTY::Prompt.new
-#         item=prompt.select("Choose your item need to laundry?", %w(SHIRTS/SHORT SHIRTS/LONG PANTS/NO/STARCH PANTS/MED 
-#             SHORTS/NO/STARCH SHORTS/MED/STARCH LAB/COAT/LIGHT/STARCH JACKET/LIGHT SKIRTS DRESSES DRESSES/HEAVY/STARCH CAMMIES/HEAVY/TARCH DRAPES
-#             PILLOW/CASES)) 
-       
-#         answer = prompt.select('Any other garments need to laundry?', %w(Yes No))
-#         if answer=="No"
-#            p item_choose.push(item)
-#             return laundry_display(item_choose)
-#         else answer="Yes" 
-#             p item_choose.push(item)
-#         end  
-#     end
-      
-# end
-# laundry_service()
 
 
 # def press_service()
