@@ -66,6 +66,8 @@ def service_view()
             puts table3
     end   
 end
+service_view()
+
 
 
 

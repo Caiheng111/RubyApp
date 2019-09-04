@@ -39,72 +39,7 @@ customers=[
     
 # end
 
-def laundry_items(item_choose)
-    total_price=0
-    if item_choose.length==1
-        File.open('laundry_price.csv',"r").each_with_index do |item,index|
-            if item.include?(item_choose[0])
-                puts "true"
-                price=item.split(',')[3]
-                total_price=price
-                drop_off_date=Date.today()
-                ticket_number=rand(0..10000)
 
-                prompt = TTY::Prompt.new
-                pickup_date=prompt.select("When would like to pich up your garments?", %w(tomorrow one_day_later two_days_days))
-                puts "Tanks, this is your ticket,please keep the ticket to pich up your garments "
-                if pickup_date=="tomorrow"
-                    table = Terminal::Table.new do |t|
-                        t.add_row ["Ticket_number","Item","Price","Total","Drop_Off Date","Delieved Date"]
-                        t.add_row [ticket_number,item_choose[0],price,total_price,drop_off_date,drop_off_date+1]
-                        t.style = {:all_separators => true}
-                    end
-                    puts table
-                elsif pickup_date=="one_day_later"
-                    table = Terminal::Table.new do |t|
-                        t.add_row ["Ticket_number","Item","Price","Total","Drop_Off Date","Delieved Date"]
-                        t.add_row [ticket_number,item_choose[0],price,total_price,drop_off_date,drop_off_date+2]
-                        t.style = {:all_separators => true}
-                    end
-                    puts table
-                else pickup_date=="two_days_days"
-                    table = Terminal::Table.new do |t|
-                        t.add_row ["Ticket_number","Item","Price","Total","Drop_Off Date","Delieved Date"]
-                        t.add_row [ticket_number,item_choose[0],price,total_price,drop_off_date,drop_off_date+3]
-                        t.style = {:all_separators => true}
-                    end
-                    puts table
-                end
-
-            end  
-            end 
-    
-    else item_choose.length > 0
-        File.open('laundry_price.csv',"r").each do |item|
-            item_choose.each_with_index do |item_choose,index|
-                if item==item_choose
-                # item.include?(item_choose[index])
-                price=item.split(',')[3]
-                total_price =price
-                ticket_number=rand(0..10000)
-                item_array=[ticket_number,item_choose[0],price,total_price,drop_off_date,drop_off_date]
-                item_array_total=item_array_total.push(item_array)
-                
-                # prompt = TTY::Prompt.new
-                # pickup_date=prompt.select("When would like to pich up your garments?", %w(tomorrow one_day_later two_days_days))
-                # puts "Tanks, this is your ticket,please keep the ticket to pich up your garments "
-                table = Terminal::Table.new :headings => ["Ticket_number","Item","Price","Total","Drop_Off Date","Delieved Date"], :rows => item_array_total
-
-                 puts table
-                end
-                
-
-            end
-        end 
-    end 
-            
-end
-laundry_items(["SHIRTS/SHORT","SKIRTS"]) 
 
 
 
@@ -116,7 +51,7 @@ laundry_items(["SHIRTS/SHORT","SKIRTS"])
 #             SHORTS/NO/STARCH SHORTS/MED/STARCH LAB/COAT/LIGHT/STARCH JACKET/LIGHT SKIRTS DRESSES DRESSES/HEAVY/STARCH CAMMIES/HEAVY/TARCH DRAPES
 #             PILLOW/CASES)) 
        
-#         answer = prompt.select('Any other garment need to laundry?', %w(Yes No))
+#         answer = prompt.select('Any other garments need to laundry?', %w(Yes No))
 #         if answer=="No"
 #            p item_choose.push(item)
 #             return laundry_display(item_choose)
@@ -127,6 +62,27 @@ laundry_items(["SHIRTS/SHORT","SKIRTS"])
       
 # end
 # laundry_service()
+
+
+# def press_service()
+#     item_choose=[]
+#     loop do
+#         prompt = TTY::Prompt.new
+#         item=prompt.select("Choose your item need to press?", %w(COAT/BLAZER SHIRT SUIT/2PC TROUSERS 
+#             BLOUSE DRESS KABA2PC KABA/KENTE/2PC KAFTAN/BOUBOU/1PC OVERCOAT POLO/GOLF/SHIRT SHORTS SMOCK/1PC
+#             SUIT/3PC) 
+       
+#         answer = prompt.select('Any other garments need to press?', %w(Yes No))
+#         if answer=="No"
+#            p item_choose.push(item)
+#             return press_display(item_choose)
+#         else answer="Yes" 
+#             p item_choose.push(item)
+#         end  
+#     end
+      
+# end
+# press_service()
 
 
 
@@ -155,7 +111,7 @@ laundry_items(["SHIRTS/SHORT","SKIRTS"])
 #                 if choice=="Laundry"
 #                     laundry_service()
 #                 elsif choice=="press_only"
-#                     press_only()
+#                     press_service()
 #                 else choice=="dry_clean"
 #                     dry_clean()
 #                 end
