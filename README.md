@@ -37,7 +37,8 @@
     1. The shop counter and manager need to log in with the account and password before using the app. If they forget the password, they can reset the password and log in again.
     2. Customer: There are two main functions:
     * check the price list of laundry,press_only,dry cleaning service.
-    *    customer can directly choose the option of drop_off garments to clean,once the counter staff   record their garments and date of picking up, the customer will receive a ticket, and they can pick up the garmemnts on the basis of the ticket number on the ticket(the ticket niumber is very important, the staff will manage all garments according to this number)
+
+    * customer can directly choose the option of drop_off garments to clean,once the counter staff   record their garments and date of picking up, the customer will receive a ticket, and they can pick up the garmemnts on the basis of the ticket number on the ticket(the ticket number is very important, the staff will manage all garments according to this number)
 
 
     
@@ -57,14 +58,28 @@
     7. Once tyey enter reset the password successfully, the application interface will automatically jump to the main service interface.
 
   * ***Feature two (price list viewing)***
-  * 
+  * this feature is for the staff and the customers
+    1. All the garments price data are stored in the csv file the staff can change the price according to this file.
+    2. The customers can check the price list with this feature.
 
-
-
-
-
+    *below are details about this feature.
+    1. once the customer choose the price_list_view option, there are three options(laundry,press_only,dry_clean) to choose. please type anyone you would like to check.
+    3. The data in every single list already stored in csv file.There is a method which can get the data from the csv file and change to table by using the gem terminal table.
+    4. Once the customer viewed one of the price lists, they can go back to the main menu according to pressing 'Enter' , then they can choose to check the other service price list.
 
   * ***Feature two (Drop_off_garments)***
+    * This feature is mainly for the staff to record all the information about the garments, and also print a ticket to the customer.
+    1. Firstly, the staff need ask the customer's phone number or customer code.If customer already been this shop before, their information already been recorded in our system. Then we can directly find customer's information.
+    2. If the customer enter a phone number or a customer code which does not exist in our system, the application will need recored their information first.
+    3. After the customer provide the name and phone number, their information will be stored in a customer array, after that, they can use the drop_off service.
+    4. Once the staff find the customer information , customer can drop off garments to clean. There are three options to choose(laundry, press_only,dry_clean)
+    5. There is a loop method to set to keep asking the customer if they have other garments need to dry clean(They need enter the gatmemts one by one )
+    6. After the customer enter all the garments they need to clean.The staff will ask the customer when they would like to pick up their garments.
+    7. Last, There is a method would record all the information such as the garments, the total price,the drop_off date and pick_up date.Then print them into a table(ticket).
+
+
+
+## 3.User Interaction and Experience
 
 
 
