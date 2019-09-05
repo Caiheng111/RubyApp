@@ -142,7 +142,7 @@ def log_in(users,customers)
     counter=0
   while counter<3
     if check_password(users,name)
-        puts "THANKS,#{nmae},You already login."
+        puts "THANKS,#{name},You already login."
         # puts "THANKS,#{user[:name]},You already logined." .colorize(:green)
         # puts "----------------------------------".colorize(:green)
         service(customers)

@@ -292,9 +292,9 @@ def laundry_service()
             puts "Please wait a min, we are printing your ticket,THANKS".colorize(:green)
             puts "..............".colorize(:green)
             puts "...........".colorize(:green)
-						puts "......".colorize(:green)
-						break
+			puts "......".colorize(:green)
             return laundry_display(item_choose)
+            break
            
         else answer="Yes" 
              item_choose.push(item)
