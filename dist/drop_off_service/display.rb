@@ -294,13 +294,14 @@ def laundry_service()
             puts "...........".colorize(:green)
             puts "......".colorize(:green)
             return laundry_display(item_choose)
+            break
         else answer="Yes" 
              item_choose.push(item)
         end  
     end
     
 end
-laundry_service()
+# laundry_service()
 
 
 
@@ -322,13 +323,14 @@ def press_service()
             puts "...........".colorize(:green)
             puts "......".colorize(:green)
             return press_display(item_choose)
+            break
         else answer="Yes" 
              item_choose.push(item)
         end  
     end
     
 end
-press_service()
+# press_service()
 
 
 
@@ -349,10 +351,11 @@ def dry_clean_service()
             puts "...........".colorize(:green)
             puts "......".colorize(:green)
             return dry_clean_display(item_choose)
+            break
         else answer="Yes" 
              item_choose.push(item)
         end  
     end
     
 end
-dry_clean_service()
+# dry_clean_service()
