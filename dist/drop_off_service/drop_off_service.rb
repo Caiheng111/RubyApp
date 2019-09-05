@@ -37,16 +37,17 @@ def add_customer(customers)
 
      puts "you are already in our system, THANKS".colorize(:green)
      puts customers
-    
 end
 
 
 
 
 def drop_off(customers)
-    puts "What is your Phone number or customer_code?"
+    puts "What is your Phone number or customer_code?".colorize(:green)
     puts "> "
     number_input=gets.strip()
+
+ 
    
     customers.each do |customer|
         if number_input==customer[:phone_number] ||number_input==customer[:customer_code]
@@ -55,21 +56,20 @@ def drop_off(customers)
                 prompt = TTY::Prompt.new
                 choice=prompt.select("What kind of service do you need?", %w(Laundry press_only dry_clean))
                 if choice=="Laundry"
-                    laundry_service() 
-                     
+                    laundry_service()
                 elsif choice=="press_only"
                     press_service()
-                  
                 else choice=="dry_clean"
                     dry_clean_service()
+                     break  
                 end 
+                break
             end
-            break
-        elsif number_input!=customer[:phone_number] ||number_input!=customer[:customer_code]
-            add_customer(customers) 
+        break
         end
-      
+        #  number_input!=customer[:phone_number] && number_input!=customer[:customer_code]  
     end
-      
+    add_customer(customers)
+         
 end
 drop_off(customers)
