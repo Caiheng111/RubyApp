@@ -48,22 +48,23 @@ puts font.write("DRY   CLEANING")
 
 
 
-def reset_password()
-        puts "Pleaase input your username again"
+def reset_password(users,customers)
+        puts "Pleaase enter your user name again".colorize(:green)
         name=gets.strip()
         time=0
         while time < 3
-            puts "please enter your new password"
+            puts "please enter your new password".colorize(:green)
             puts "> "
             password_one=gets.strip()
-            puts "please enter your new password again"
+            puts "please enter your new password again".colorize(:green)
             puts "> "
             password_two=gets.strip()
             if password_one==password_two
                 users.each do |user|
                     if user[:name]==name
-                    users[:password]=password_one
+                    user[:password]=password_one
                     puts "You already reseted your password.".colorize(:green)
+                    service(customers)
                     break
 
                     end
@@ -74,7 +75,7 @@ def reset_password()
 end
 
 def check_password(users,name)
-    puts "please input your password"
+    puts "please input your password".colorize(:green)
     password=gets.strip()
     found_user = users.find do |user|
         user[:name] == name
@@ -141,7 +142,7 @@ def log_in(users,customers)
     counter=0
   while counter<3
     if check_password(users,name)
-        puts "already login"
+        puts "THANKS,#{nmae},You already login."
         # puts "THANKS,#{user[:name]},You already logined." .colorize(:green)
         # puts "----------------------------------".colorize(:green)
         service(customers)
@@ -152,6 +153,7 @@ def log_in(users,customers)
         counter+=1
     end
     puts "SORRY, you already enter three times, please reset your password.".colorize(:green)
+    reset_password(customers,users)
 
 end
 

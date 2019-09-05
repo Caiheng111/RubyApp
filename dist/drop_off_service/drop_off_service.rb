@@ -1,5 +1,6 @@
 
 require "tty-prompt"
+require 'tty-font'
 require 'colorize'
 require 'terminal-table'
 require 'date'
@@ -16,6 +17,7 @@ customers=[
     {name:"molly",phone_number:"0417862748",customer_code:"237"},
     {name:"dee",phone_number:"0417826748",customer_code:"567"},  
 ]
+
 def add_customer(customers)
     puts "Sorry, you havn't been to our shop before".colorize(:green)
     puts "we need record your information first".colorize(:green) 
@@ -35,7 +37,6 @@ def add_customer(customers)
     customers << customer
 
      puts "You have been added to our system, THANKS".colorize(:green)
-    #  puts customers
 end
 
 def if_customer(customers, number_input)
@@ -46,6 +47,36 @@ def if_customer(customers, number_input)
     end
 end
 
+
+
+def drop_off(customers, number_input)
+    # puts "Welcome,".colorize(:green)
+    loop do
+        prompt = TTY::Prompt.new
+        choice=prompt.select("What kind of service do you need?", %w(Laundry press_only dry_clean Exit))
+        
+        if choice=="Laundry"
+            laundry_service()
+        elsif choice=="press_only"
+            press_service()
+          
+        elsif choice == 'dry_clean'
+            dry_clean_service()
+         
+        else
+            font = TTY::Font.new(:doom)
+            puts font.write("THANKS")
+            puts font.write("FOR YOUR  ")
+            puts font.write("SUPPORT")
+            puts font.write("      H      Y ")
+            
+            # puts "Thank you for your business,Thanks for your support to HY dry cleaning".colorize(:green)  
+            return
+        end 
+    end
+end
+
+# run(customers)
 def run(customers)
     puts "What is your Phone number or customer_code?".colorize(:green)
     puts "> "
@@ -58,27 +89,3 @@ def run(customers)
         drop_off(customers, number_input)
     end
 end
-
-def drop_off(customers, number_input)
-    puts "Welcome".colorize(:green)
-    loop do
-        prompt = TTY::Prompt.new
-        choice=prompt.select("What kind of service do you need?", %w(Laundry press_only dry_clean Exit))
-        
-        if choice=="Laundry"
-            laundry_service()
-        elsif choice=="press_only"
-            press_service()
-        elsif choice == 'dry_clean'
-            dry_clean_service()
-        else
-            
-            puts "Thank you for your business"  
-            return
-        end 
-    end
-end
-
-run(customers)
-          
-# drop_off(customers)
