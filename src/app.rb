@@ -4,8 +4,8 @@ require "tty-prompt"
 require 'colorize'
 require 'terminal-table'
 require 'csv'
-require_relative '../dist/drop_off_service/drop_off_service.rb'
 require 'pry'
+require_relative './drop_off_service.rb'
 
 
 
