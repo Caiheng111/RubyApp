@@ -69,13 +69,12 @@ def drop_off(customers, number_input)
             puts font.write("FOR YOUR  ")
             puts font.write("BUINESS")
             
-           
             return
         end 
     end
 end
 
-# run(customers)
+
 def run(customers)
     puts "What is your Phone number or customer_code?".colorize(:green)
     puts "> "
