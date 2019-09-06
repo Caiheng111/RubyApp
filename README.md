@@ -5,15 +5,12 @@
 
 ## contents
 1. Statement of Purpose and Scope
-2. Features
-3. User Interaction and Experience
-4. Control Flow Diagram
-5. Implementation Plan
-6. Help file
-7.
-8. Test Application
-9. Project Management Plan
-
+2. Help file
+3. Features
+4. User Interaction and Experience
+5. Control Flow Diagram
+6. Implementation and Project Management Plan
+7. Test Application
 
 
 ## 1.Statement of Purpose and Scope
@@ -46,9 +43,36 @@
     * customer can directly choose the option of drop_off garments to clean,once the counter staff   record their garments and date of picking up, the customer will receive a ticket, and they can pick up the garmemnts on the basis of the ticket number on the ticket(the ticket number is very important, the staff will manage all garments according to this number)
 
 
-    
 
-## 2.Features
+## 2.Help File
+
+* ***Below are steps to run the application***
+
+1. Make sure you have ruby installed on your machine. I use the rbenv. This required homebrew.
+
+2. clone the repository from the github.Here is the link:
+```txt
+https://github.com/Caiheng111/terminal-application
+```
+
+```txt
+git clone name.git
+```
+
+```txt
+'cd' into your directory you've cloned
+```
+
+3. run the build.sh file to install everything
+```txt
+run the 'build shell' in the ternamial 
+```
+4. Run the follow command 
+```txt
+run app.rb
+```
+
+## 3.Features
   * ***Feature one（login feature）***
 
     * The login function is designed for the staffs and managers who work in the dry clean shop
@@ -70,7 +94,7 @@
     3. The data in every single list already stored in csv file.There is a method which can get the data from the csv file and change to table by using the gem terminal table.
     4. Once the customer viewed one of the price lists, they can go back to the main menu according to pressing 'Enter' , then they can choose to check the other service price list.
 
-  * ***Feature two (Drop_off_garments)***
+  * ***Feature three (Drop_off_garments)***
     * This feature is mainly for the staff to record all the information about the garments, and also print a ticket to the customer.
     1. Firstly, the staff need ask the customer's phone number or customer code.If customer already been this shop before, their information already been recorded in our system. Then we can directly find customer's information.
     2. If the customer enter a phone number or a customer code which does not exist in our system, the application will need recored their information first.
@@ -82,7 +106,7 @@
 
 
 
-## 3.User Interaction and Experience
+## 4.User Interaction and Experience
 
 * ***Login Interface***
     * Choose you are a staff 
@@ -111,7 +135,7 @@
 
 
 
-## 4.Control Flow Diagram
+## 5.Control Flow Diagram
 
 * ***Login Flow Diagram***
     
@@ -131,37 +155,60 @@
 
 
 
-##5.Project Management Plan
-    ![menua](asset/Heng-T1A2-13-project-management.png)
+## 6.Implementation and Project Management Plan
+
+  ![menua](asset/Heng-T1A2-13-project-management.png)
 
 
-## 6.Help File
 
-* ***Below are steps to run the application***
+## 7.Test Application
 
-1. Make sure you have ruby installed on your machine. I use the rbenv. This required homebrew.
-
-2. clone the repository from the github.Here is the link:
+ * ***login method test***
 ```txt
-https://github.com/Caiheng111/terminal-application
+ def log_in(users,customers)
+    prompt = TTY::Prompt.new
+    name = prompt.select("Please choose the staff name?", %w(Heng  Hannah Upa Hevvon))
+    counter=0
+  while counter<3
+    if check_password(users,name)
+        puts "THANKS,#{name},You already login.".colorize(:green)
+        puts "--------------------------------".colorize(:green)
+        service(customers)
+        break
+    else  
+    end
+        counter+=1
+    end
+    puts "SORRY, you already enter three times, please reset your password.".colorize(:green)
+    reset_password(customers,users)
+end
+log_in(users,customers)
 ```
 
+ * ***add_customer method test***
 ```txt
-git clone name.git
+def add_customer(customers)
+    puts "Sorry, you havn't been to our shop before".colorize(:green)
+    puts "we need record your information first".colorize(:green) 
+    puts "Can I have your name please".colorize(:green) 
+    puts "> "
+    name=gets.strip()
+    puts "Can I have your phone number please".colorize(:green) 
+    puts "> "
+    phone_number=gets.strip()
+    customer_code=rand(0..1000)
+    customer={
+        name:name,
+        phone_number:phone_number.to_s,
+        customer_code:customer_code.to_s
+    }
+    customers << customer
+     puts "You have been added to our system, THANKS".colorize(:green)
+end
 ```
 
-```txt
-'cd' into your directory you've cloned
-```
 
-3. run the build.sh file to install everything
-```txt
-run the 'build shell' in the ternamial 
-```
-4. Run the follow command 
-```txt
-run app.rb
-```
+
 
 
 
