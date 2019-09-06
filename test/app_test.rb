@@ -40,9 +40,9 @@ users=[
 
 
 font = TTY::Font.new(:doom)
-puts font.write("WELCOME")
-puts font.write("                 H   Y ")
-puts font.write("DRY   CLEANING")
+puts font.write("WELCOME").colorize(:green)
+puts font.write("                 H   Y ").colorize(:green)
+puts font.write("DRY   CLEANING").colorize(:green)
 
 
 
@@ -142,9 +142,8 @@ def log_in(users,customers)
     counter=0
   while counter<3
     if check_password(users,name)
-        puts "THANKS,#{name},You already login."
-        # puts "THANKS,#{user[:name]},You already logined." .colorize(:green)
-        # puts "----------------------------------".colorize(:green)
+        puts "THANKS,#{name},You already login.".colorize(:green)
+        puts "--------------------------------".colorize(:green)
         service(customers)
         break
     else

@@ -67,10 +67,9 @@ def drop_off(customers, number_input)
             font = TTY::Font.new(:doom)
             puts font.write("THANKS")
             puts font.write("FOR YOUR  ")
-            puts font.write("SUPPORT")
-            puts font.write("      H      Y ")
+            puts font.write("BUINESS")
             
-            # puts "Thank you for your business,Thanks for your support to HY dry cleaning".colorize(:green)  
+           
             return
         end 
     end

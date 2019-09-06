@@ -32,7 +32,7 @@ def laundry_display(item_choose)
                         t.style = {:all_separators => true}
                     end
                     puts table
-                else pickup_date=="two_days_days"
+                else pickup_date=="two_days_later"
                     table = Terminal::Table.new do |t|
                         t.add_row ["Ticket_number","Item","Service","Price","Drop_Off Date","Delieved Date","Total($)"]
                         t.add_row [ticket_number,item_choose[0],"Laundry",price,drop_off_date,drop_off_date+3,total_price]
@@ -79,7 +79,7 @@ def laundry_display(item_choose)
             puts table
             puts "The total price is $#{total_price}.".colorize(:green)
             puts "You can pick up the garments at #{drop_off_date+2}.".colorize(:green)
-        else pickup_date=="two_days_days"
+        else pickup_date=="two_days_later"
             puts "Thanks, this is your ticket,please keep the ticket to pich up your garments".colorize(:green)
     
             puts "The ticket number is #{ticket_number}.".colorize(:green)
@@ -125,7 +125,7 @@ def press_display(item_choose)
                         t.style = {:all_separators => true}
                     end
                     puts table
-                else pickup_date=="two_days_days"
+                else pickup_date=="two_days_later"
                     table = Terminal::Table.new do |t|
                         t.add_row ["Ticket_number","Item","Service","Price","Drop_Off Date","Delieved Date","Total($)"]
                         t.add_row [ticket_number,item_choose[0],"Press",price,drop_off_date,drop_off_date+3,total_price]
@@ -171,7 +171,7 @@ def press_display(item_choose)
             puts table
             puts "The total price is $#{total_price}.".colorize(:green)
             puts "You can pick up the garments at #{drop_off_date+2}.".colorize(:green)
-        else pickup_date=="two_days_days"
+        else pickup_date=="two_days_later"
             puts "Tanks, this is your ticket,please keep the ticket to pich up your garments.".colorize(:green)
             puts "The ticket number is #{ticket_number}.".colorize(:green)
             table = Terminal::Table.new :headings => ["Item","Service","Price","Drop_Off Date"], :rows => rows
@@ -216,7 +216,7 @@ def dry_clean_display(item_choose)
                         t.style = {:all_separators => true}
                     end
                     puts table
-                else pickup_date=="two_days_days"
+                else pickup_date=="two_days_later"
                     table = Terminal::Table.new do |t|
                         t.add_row ["Ticket_number","Item","Service","Price","Drop_Off Date","Delieved Date","Total($)"]
                         t.add_row [ticket_number,item_choose[0],"Dry Clean",price,drop_off_date,drop_off_date+3,total_price]
@@ -261,7 +261,7 @@ def dry_clean_display(item_choose)
             puts table
             puts "The total price is $#{total_price}.".colorize(:green)
             puts "You can pick up the garments at #{drop_off_date+2}.".colorize(:green)
-        else pickup_date=="two_days_days"
+        else pickup_date=="two_days_later"
             puts "Thanks, this is your ticket,please keep the ticket to pich up your garments".colorize(:green)
             puts "The ticket number is #{ticket_number}.".colorize(:green)
             table = Terminal::Table.new :headings => ["Item","Service","Price","Drop_Off Date"], :rows => rows

@@ -9,6 +9,11 @@
 3. User Interaction and Experience
 4. Control Flow Diagram
 5. Implementation Plan
+6. Help file
+7.
+8. Test Application
+9. Utilise a project management 
+
 
 
 ## 1.Statement of Purpose and Scope
@@ -42,8 +47,6 @@
 
 
     
-
-
 
 ## 2.Features
   * ***Feature one（login feature）***
@@ -80,6 +83,99 @@
 
 
 ## 3.User Interaction and Experience
+
+* ***Login Interface***
+    * Choose you are a staff 
+    * Choose the user name
+    * Enter the password 
+    * If password passed, login successfully
+    * If password wrong, keep entering the password
+    * If enter the password wrongly three times, go to reset password
+    * After reset the password, login successfully
+![menua](asset/heng-T1A2-13-project-interface1.png)
+
+
+* ***Service Interface***
+    * Choose the price list option
+    * After viewed the price list, you can go back to choose service again
+![menua](asset/heng-T1A2-13-project-interface3.png)
+
+* ***Customer Verification Interface***
+
+    * Customer enter the phone number or customer code
+    * If information exist, go to choose clean service
+    * If information not exist, go to add new customer
+    * After recorded successfully, go to drop off garments
+![menua](asset/heng-T1A2-13-project-interface4.png)
+
+
+
+
+## 4.Control Flow Diagram
+
+* ***Login Flow Diagram***
+    
+    ![menua](asset/Heng-T1A2-13-project-login-diagram.png)
+
+* ***Service option Flow Diagram***
+
+    ![menua](asset/Heng-T1A2-13-project-service-options-diagram.png)
+
+* ***Customer Verfication Flow Diagram***
+
+    ![menua](asset/Heng-T1A2-13-project-customer-verification-diagram.png)
+
+* ***Drop Off Garments Flow Diagram***
+
+    ![menua](asset/Heng-T1A2-13-project-drop-off-diagram.png)
+
+
+
+##5.Implementation Plan
+
+
+## 6.Help File
+
+* ***Below are steps to run the application***
+
+1. Make sure you have ruby installed on your machine. I use the rbenv. This required homebrew.
+
+2. clone the repository from the github.Here is the link:
+```txt
+https://github.com/Caiheng111/terminal-application
+```
+
+```txt
+git clone name.git
+```
+
+```txt
+'cd' into your directory you've cloned
+```
+
+3. run the build.sh file to install everything
+```txt
+run the 'build shell' in the ternamial 
+```
+4. Run the follow command 
+```txt
+run app.rb
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
